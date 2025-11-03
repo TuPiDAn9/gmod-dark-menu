@@ -1,0 +1,18 @@
+#
+# Ignore everything by default
+#
+*
+
+# Allow Git to traverse directories
+!*/
+
+# But keep these directories tracked
+!/html/**
+!/resource/**
+
+# Ignore all files in /resource except SourceScheme.res
+/resource/*
+!/resource/SourceScheme.res
+
+# Keep the ignore file tracked
+!.gitignore

@@ -1,0 +1,412 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2a2a2a;
+    --button-bg: #2a2a2a;
+
+    --border-color: #3a3a3a;
+    --accent-border: #4a8028;
+    --scroll-bg: #4a4a4a;
+
+    --hover-bg: #2d5016;
+    --hover-shadow: #3a6b1f;
+
+    --text-primary: #e0e0e0;
+    --text-white: #fff;
+
+    --accent-error: #c43a00;
+    --warning-accent: #4a8028;
+}
+
+UL.category LI.mapicon IMG.thumbnail {
+    width: 128px;
+    height: 128px;
+}
+
+UL.category LI.mapicon IMG.favtoggle {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    visibility: hidden;
+    background-image: url('../../img/favourite.png?1');
+}
+
+UL.category LI.mapicon:hover IMG.favtoggle {
+    visibility: visible;
+}
+
+UL.category LI.mapicon IMG.favtoggle_always {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-image: url('../../img/favourite.png?1');
+}
+
+UL.category LI.mapicon IMG.faviconadd:hover {
+    background-image: url('../../img/favourite_add.png?1');
+}
+
+UL.category LI.mapicon IMG.faviconremove:hover {
+    background-image: url('../../img/favourite_remove.png?1');
+}
+
+UL.category LI.mapicon {
+    position: relative;
+    width: 128px;
+    text-align: center;
+    font-size: 10px;
+    padding: 6px;
+    margin: 2px;
+    cursor: pointer;
+    vertical-align: top;
+    background-color: var(--secondary-bg);
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+UL.category LI.mapicon:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--accent-border);
+    box-shadow: 0 0 8px rgba(74, 128, 40, 0.3);
+}
+
+UL.category LI.mapicon span {
+    word-break: break-all;
+    color: var(--text-primary);
+}
+
+UL.category LI.mapicon.selected {
+    background-color: var(--hover-shadow);
+    border-color: var(--accent-border);
+    border-radius: 3px;
+    box-shadow: inset 0 0 4px rgba(74, 128, 40, 0.5);
+}
+
+.maplist {
+    right: 256px;
+    top: 16px;
+    left: 16px;
+    bottom: 16px;
+    position: absolute;
+    background-color: var(--primary-bg);
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.maplist .controls {
+    width: 190px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    bottom: 10px;
+}
+
+gamesettings {
+    right: 16px;
+    top: 16px;
+    width: 226px;
+    bottom: 16px;
+    position: absolute;
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+gamesettings bottom {
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+gamesettings bottom button {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    padding: 10px;
+    position: absolute;
+    margin: 10px;
+    font-size: 20px;
+    width: calc(100% - 36px);
+    background-color: var(--accent-border);
+    color: var(--text-white);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+gamesettings bottom button:hover {
+    background-color: var(--hover-shadow);
+    box-shadow: 0 0 8px rgba(74, 128, 40, 0.5);
+}
+
+gamesettings select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    background-color: var(--button-bg);
+    color: var(--text-primary);
+}
+
+gamesettings .scrollable {
+    overflow-y: scroll;
+    margin: 10px;
+    margin-right: 0px;
+    padding-right: 2px;
+}
+
+gamesettings .scrollable::-webkit-scrollbar {
+    width: 8px;
+}
+
+gamesettings .scrollable::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+}
+
+gamesettings .scrollable::-webkit-scrollbar-thumb {
+    background: var(--scroll-bg);
+    border-radius: 4px;
+}
+
+gamesettings .scrollable::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-bg);
+}
+
+gamesettings .control {
+    margin-top: 8px;
+}
+
+gamesettings .control:first-child {
+    margin-top: 6px;
+}
+
+gamesettings .control-sub {
+    margin-top: 4px;
+    margin-left: 18px;
+}
+
+gamesettings .control LABEL {
+    font-size: 11px;
+    color: var(--text-primary);
+}
+
+gamesettings .control:not(.control-numeric):not(.control-text) LABEL {
+    position: relative;
+    top: -2px;
+}
+
+gamesettings .control-text LABEL {
+    margin-bottom: 2px;
+    display: block;
+}
+
+gamesettings .control-numeric LABEL {
+    line-height: 20px;
+}
+
+gamesettings .control input[type=text] {
+    width: 100%;
+    padding: 4px;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    transition: border-color 0.2s ease;
+}
+
+gamesettings .control input[type=text]:focus {
+    outline: none;
+    border-color: var(--accent-border);
+    box-shadow: 0 0 4px rgba(74, 128, 40, 0.3);
+}
+
+gamesettings .control-numeric {
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+gamesettings .control-numeric input[type=text] {
+    width: 44px;
+    padding: 2px;
+    float: right;
+    height: 20px;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+}
+
+.dropdown {
+    position: relative;
+    z-index: 100;
+}
+
+.dropdown .label {
+    border-radius: 3px;
+    height: 28px;
+    padding-left: 10px;
+    line-height: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    background: linear-gradient(to bottom, var(--hover-bg), var(--hover-shadow));
+    border: 1px solid var(--accent-border);
+    color: var(--text-white);
+    vertical-align: middle;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.dropdown .label:hover {
+    background: linear-gradient(to bottom, var(--hover-shadow), var(--hover-bg));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                0 2px 6px rgba(74, 128, 40, 0.4);
+}
+
+.dropdown .contents {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 31px;
+    background-color: var(--secondary-bg);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    display: none;
+    cursor: pointer;
+    font-size: 13px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown .contents div {
+    padding: 4px 15px;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.dropdown .contents div:hover {
+    background-color: var(--hover-bg);
+    border-left: 3px solid var(--accent-border);
+    padding-left: 12px;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    vertical-align: top;
+    border-top: 5px solid var(--text-white);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: "";
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.controls .search {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    padding: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.controls .search input {
+    width: 100%;
+    padding: 6px;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.controls .search input:focus {
+    outline: none;
+    border-color: var(--accent-border);
+    box-shadow: 0 0 6px rgba(74, 128, 40, 0.3);
+}
+
+.controls UL {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 32px;
+}
+
+.controls UL::-webkit-scrollbar {
+    width: 6px;
+}
+
+.controls UL::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+}
+
+.controls UL::-webkit-scrollbar-thumb {
+    background: var(--scroll-bg);
+    border-radius: 3px;
+}
+
+.controls UL::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-bg);
+}
+
+.controls LI.category {
+    background-color: var(--button-bg);
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: var(--text-primary);
+    height: 26px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.controls LI.category:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--accent-border);
+}
+
+.controls LI.active {
+    background-color: var(--hover-shadow);
+    color: var(--text-white);
+    border-color: var(--accent-border);
+    box-shadow: inset 0 0 4px rgba(74, 128, 40, 0.4);
+}
+
+.controls LI.category .name {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    bottom: 0;
+    right: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.controls LI.category .count {
+    float: right;
+    background-color: var(--primary-bg);
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin: 5px;
+    color: var(--accent-border);
+    font-size: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 1px solid var(--border-color);
+}

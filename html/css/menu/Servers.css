@@ -1,0 +1,823 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2a2a2a;
+    --button-bg: #2a2a2a;
+
+    --border-color: #3a3a3a;
+    --accent-border: #4a8028;
+    --scroll-bg: #4a4a4a;
+
+    --hover-bg: #2d5016;
+    --hover-shadow: #3a6b1f;
+
+    --text-primary: #e0e0e0;
+    --text-white: #fff;
+
+    --accent-error: #c43a00;
+}
+
+.servers {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: auto;
+    background-color: var(--primary-bg);
+}
+
+.gamemode {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: var(--secondary-bg);
+    padding: 5px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    height: 34px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.gamemode:hover {
+    background-color: var(--hover-bg);
+}
+
+.gamemode .name {
+    font-weight: bold;
+    position: absolute;
+    left: 40px;
+    top: 5px;
+    font-size: 20px;
+    white-space: nowrap;
+    color: var(--text-primary);
+}
+
+.gamemode .name tag {
+    background: var(--accent-border);
+    color: var(--text-white);
+    padding: 1px 12px;
+    padding-bottom: 2px;
+    margin-left: 10px;
+    font-size: 11px;
+    font-weight: normal;
+    position: relative;
+    top: -4px;
+    border-radius: 3px;
+}
+
+.gamemode .stats {
+    text-align: right;
+    font-size: 11px;
+    color: var(--text-primary);
+    position: absolute;
+    bottom: 3px;
+    left: 43px;
+}
+
+.gamemode IMG {
+    font-weight: bold;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 5px;
+    top: 9px;
+}
+
+H1 small {
+    color: var(--text-primary);
+    font-size: 50%;
+    font-weight: normal;
+    padding-left: 8px;
+}
+
+.serverlist_layout {
+    display: -webkit-box;
+    -webkit-box-pack: justify;
+    -webkit-box-align: start;
+    position: absolute;
+    top: 90px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: var(--primary-bg);
+}
+
+.serverlist {
+    -webkit-box-flex: 1;
+    position: relative;
+    background-color: var(--secondary-bg);
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 100%;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.serverlist.found_servers {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: relative;
+    margin-top: 5px;
+    padding: 1px;
+}
+
+.serverlist ping,
+.serverlist maxplayers,
+.serverlist players,
+.serverlist map,
+.serverlist rank,
+.serverlist lastvisited {
+    width: 50px;
+    font-size: 11px;
+    overflow: hidden;
+    text-align: center;
+    display: block;
+    color: var(--text-primary);
+    background: transparent;
+}
+
+.serverlist name {
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 13px;
+    display: block;
+    margin-right: 3px;
+    -webkit-box-flex: 1;
+    line-height: 17px;
+    color: var(--text-primary);
+    text-overflow: ellipsis;
+}
+
+.serverlist name span {
+    vertical-align: top;
+}
+
+.serverlist name tag {
+    background: var(--accent-error);
+    color: var(--text-white);
+    font-size: 10px;
+    font-weight: normal;
+    padding: 1px 10px;
+    margin-left: 5px;
+    margin-top: 2px;
+    vertical-align: top;
+    display: inline-block;
+    line-height: normal;
+    border-radius: 2px;
+}
+
+.serverlist name .flag {
+    position: relative;
+    top: -2px;
+}
+
+.serverlist name tag.future {
+    background: var(--accent-border);
+    color: var(--text-white);
+}
+
+.serverlist name .passworded {
+    margin-right: 4px;
+}
+
+.serverlist lastvisited {
+    width: auto;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.serverlist map {
+    width: 90px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.serverlist players {
+    width: 48px;
+    color: var(--text-primary);
+}
+
+.serverlist ping {
+    width: 32px;
+    color: var(--text-primary);
+}
+
+.serverlist rank {
+    width: 64px;
+    color: var(--text-primary);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.serverlist .server rank {
+    background-image: url('../../img/rank1.png');
+}
+
+.serverlist .server rank.rank5 {
+    background-image: url('../../img/rank5.png');
+}
+
+.serverlist .server rank.rank4 {
+    background-image: url('../../img/rank4.png');
+}
+
+.serverlist .server rank.rank3 {
+    background-image: url('../../img/rank3.png');
+}
+
+.serverlist .server rank.rank2 {
+    background-image: url('../../img/rank2.png');
+}
+
+.serverlist .server {
+    height: 16px;
+    background-color: var(--secondary-bg);
+    padding: 3px 4px;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: -webkit-box;
+    -webkit-box-pack: justify;
+    -webkit-box-align: stretch;
+    line-height: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.serverlist .server:nth-child(odd) {
+    background-color: var(--primary-bg);
+}
+
+.serverlist .empty {
+    color: #777;
+}
+
+.serverlist .missingmap map {
+    color: var(--accent-error);
+}
+
+.serverlist .empty players {
+    color: var(--accent-error);
+}
+
+.serverlist .server:hover {
+    background-color: var(--hover-bg);
+}
+
+.serverlist .header {
+    background-color: var(--accent-border);
+    position: absolute;
+    border-radius: 4px 4px 0 0;
+    padding: 4px;
+    font-size: 11px;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    display: -webkit-box;
+    -webkit-box-pack: justify;
+    -webkit-box-align: stretch;
+    line-height: 16px;
+    color: var(--text-white);
+}
+
+.serverlist .body {
+    top: 32px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    background-color: transparent;
+}
+
+.serverlist .header ping,
+.serverlist .header maxplayers,
+.serverlist .header players,
+.serverlist .header map,
+.serverlist .header name,
+.serverlist .header rank {
+    font-size: 11px;
+    font-weight: normal;
+    color: var(--text-white);
+    text-align: center;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1280px) {
+    .serverlist .servers ping,
+    .serverlist .servers maxplayers,
+    .serverlist .servers players,
+    .serverlist .servers map,
+    .serverlist .servers rank {
+        font-size: 13px;
+    }
+    .serverlist name {
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .serverlist map {
+        width: 130px;
+    }
+    .serverlist .header name {
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 1650px) {
+    .serverlist map {
+        width: 170px;
+    }
+}
+
+H1.menuheader {
+    color: var(--text-primary);
+    margin-bottom: 0;
+    text-shadow: 2px 2px 1px var(--primary-bg);
+}
+
+H1.menuheader small {
+    color: var(--text-primary);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px var(--primary-bg);
+}
+
+A.bglink {
+    color: var(--text-white);
+    font-weight: bold;
+    background-color: var(--accent-border);
+    padding: 8px 10px;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 4px;
+    position: absolute;
+}
+
+A.bglink:hover {
+    background-color: var(--hover-bg);
+}
+
+A.bglink img {
+    vertical-align: middle;
+}
+
+.serverinfo {
+    width: 280px;
+    background-color: var(--secondary-bg);
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    z-index: 1001;
+    position: relative;
+}
+
+.serverinfo .closebtn {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--accent-error);
+    background-image: url(../../img/cross.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+}
+
+.serverinfo .closebtn:hover {
+    background-color: var(--border-color);
+}
+
+.serverinfo name {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    letter-spacing: -1px;
+    color: var(--text-primary);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.serverinfo button {
+    width: 100%;
+    font-size: 30px;
+    color: var(--text-white);
+    background-color: var(--accent-border);
+    border-radius: 3px;
+    border: none;
+    z-index: 1001;
+    position: relative;
+}
+
+.serverinfo address {
+    text-align: left;
+    font-size: 12px;
+    user-select: text;
+    color: var(--text-primary);
+}
+
+.serverinfo subinfo {
+    display: block;
+    color: var(--text-primary);
+}
+
+.serverinfo > div {
+    display: table;
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+}
+
+.serverinfo div.cell {
+    display: table-cell;
+}
+
+.serverinfo header {
+    display: table-row;
+    height: 0;
+}
+
+.serverinfo players {
+    display: block;
+    height: 100%;
+    background-color: var(--secondary-bg);
+    border-radius: 4px;
+    overflow: auto;
+    color: var(--text-primary);
+}
+
+.serverinfo players * {
+    white-space: nowrap;
+}
+
+.serverinfo players .pname {
+    max-width: 170px;
+    overflow: hidden;
+    color: var(--text-primary);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 900px) {
+    .serverinfo players .pname {
+        max-width: 95px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.serverinfo footer {
+    display: table-row;
+    height: 0;
+    margin-top: 5px;
+}
+
+.serverinfo footer input[type=password] {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 5px;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    z-index: 1001;
+    position: relative;
+}
+
+.activeserver {
+    background-color: var(--accent-border) !important;
+}
+
+DIV.installgamemode {
+    height: 25px;
+    line-height: 26px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: var(--accent-border);
+    text-align: center;
+    color: var(--text-white);
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border: 2px solid var(--secondary-bg);
+    z-index: 100;
+    cursor: pointer;
+    background: var(--accent-border) url('../../img/gm_install32.png') no-repeat 6px center;
+    padding-left: 36px;
+}
+
+DIV.installgamemode:hover {
+    background-color: var(--hover-bg);
+}
+
+SPAN.installgamemode {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    background: var(--accent-border) url('../../img/gm_install16.png') no-repeat 13px center;
+    width: 42px;
+}
+
+SPAN.installgamemode:hover {
+    background-color: var(--hover-bg);
+}
+
+.server_gamemodes {
+    border: 5px solid var(--accent-border);
+    position: absolute;
+    top: 64px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: var(--primary-bg);
+}
+
+.server_gamemodes_inner {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+.add_fav_server {
+    background-color: var(--secondary-bg);
+    margin: 0 auto;
+    padding: 5px 10px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.add_fav_server button {
+    background-color: var(--accent-border);
+    color: var(--text-white);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-left: 5px;
+    height: 24px;
+}
+
+.add_fav_server button:hover {
+    background-color: var(--hover-bg);
+}
+
+.add_fav_server input {
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    height: 24px;
+    padding: 4px;
+    width: 200px;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+}
+
+.add_fav_server div.header {
+    display: -webkit-box;
+}
+
+.add_fav_server div.header span {
+    display: -webkit-box;
+    -webkit-box-flex: 1;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.add_fav_server div.header div.fav_inputs {
+    display: -webkit-box;
+    -webkit-box-pack: end;
+}
+
+@media screen and (min-width: 1280px) {
+    .server_gamemodes {
+        margin: 0 auto;
+        width: 80%;
+        max-width: 1000px;
+    }
+}
+
+.noplayers {
+    opacity: 0.4;
+}
+
+/* Server search box */
+.controls .searchbox {
+    border-radius: 2px;
+    margin-top: 4px;
+    padding: 7px 10px;
+    height: auto;
+    width: 15%;
+    min-width: 150px;
+    margin-right: 0px;
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+DIV.page DIV.options UL LI.sb_filters {
+    font-size: 16px;
+    margin-right: 42px;
+    color: var(--text-primary);
+}
+
+DIV.page DIV.options UL LI.sb_filter_sep {
+    border-top: 1px solid var(--scroll-bg);
+    margin-right: 42px;
+    margin-bottom: 24px;
+}
+
+DIV.page DIV.options UL LI.sb_filters .passworded {
+    vertical-align: text-top;
+}
+
+.gmfilter_rev {
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 3px;
+    margin-top: -2px;
+}
+
+.small {
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.smalltextbox {
+    width: 70px;
+    border-radius: 2px;
+    padding: 2px 10px;
+    text-align: center;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.flags_filter {
+    margin-top: 5px;
+    background: var(--accent-border);
+    padding: 4px;
+    padding-bottom: 0px;
+    border-radius: 4px;
+    text-align: center;
+    color: var(--text-white);
+}
+
+.flags_filter .flag {
+    cursor: pointer;
+    padding: 3px;
+    margin: 0 2px;
+    margin-bottom: 4px;
+    background: var(--secondary-bg);
+    border-radius: 4px;
+    color: var(--text-primary);
+}
+
+.flags_filter .flag.prefer {
+    background: var(--accent-border);
+    color: var(--text-white);
+}
+
+.flags_filter .flag.avoid {
+    background: var(--accent-error);
+    color: var(--text-white);
+}
+
+@media screen and (max-width: 1024px) {
+    div.page.server_browser DIV.innerpage {
+        left: 180px;
+    }
+}
+
+@media screen and (min-width: 1367px) {
+    div.page.server_browser {
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    div.page.server_browser DIV.innerpage {
+        left: 250px;
+        right: 5px;
+    }
+    DIV.page.server_browser DIV.options {
+        padding-left: 5px;
+    }
+    DIV.page.server_browser DIV.options UL {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    DIV.page DIV.innerpage {
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+    }
+    .serverinfo {
+        padding: 5px;
+        width: 150px;
+    }
+    .serverlist .header {
+        top: 3px;
+        left: 3px;
+        right: 3px;
+    }
+    .serverlist .body {
+        top: 25px;
+        left: 3px;
+        right: 3px;
+        bottom: 3px;
+    }
+    .serverlist name {
+        font-size: 11px;
+        line-height: inherit;
+    }
+    .serverlist .server:not(:hover) lastvisited {
+        display: none;
+    }
+    .serverlist lastvisited .lasttime {
+        display: none;
+    }
+    .serverlist map {
+        width: 56px;
+    }
+    .serverlist players {
+        width: 46px;
+    }
+    .serverlist ping {
+        width: 18px;
+    }
+    .serverlist rank {
+        width: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .serverlist .server rank {
+        background-image: url('../../img/ranksmall1.png');
+    }
+    .serverlist .server rank.rank5 {
+        background-image: url('../../img/ranksmall5.png');
+    }
+    .serverlist .server rank.rank4 {
+        background-image: url('../../img/ranksmall4.png');
+    }
+    .serverlist .server rank.rank3 {
+        background-image: url('../../img/ranksmall3.png');
+    }
+    .serverlist .server rank.rank2 {
+        background-image: url('../../img/ranksmall2.png');
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    .serverlist lastvisited lbl {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .serverinfo {
+        width: 215px;
+    }
+}
+
+name .favbutton {
+    background: url('../../img/notfavourite.png');
+    margin-right: 4px;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+}
+
+name .favbutton:hover {
+    background: url('../../img/notfavourite_add.png');
+}
+
+name .favbutton.favorited {
+    background: url('../../img/favourite.png');
+}
+
+name .favbutton.favorited:hover {
+    background: url('../../img/favourite_remove.png');
+}

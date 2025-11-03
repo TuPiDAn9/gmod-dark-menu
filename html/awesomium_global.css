@@ -1,0 +1,87 @@
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #2a2a2a;
+    border: 1px solid #4a4a4a;
+    border-radius: 2px;
+
+    width: 13px;
+    height: 13px;
+    margin: 3px 3px 0px 4px;
+}
+
+input[type="checkbox"]:hover {
+    border-color: #4a8028;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #2d5016;
+    border-color: #4a8028;
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path style='fill: rgb(224,224,224);' d='M 74 285 Q 206 422 206 422 L 442 129 L 377 77 L 200 295 L 131 229 L 74 285' /></svg>");
+}
+
+input[type="checkbox"]:checked:hover {
+    background-color: #3a6b1f;
+    border-color: #4a8028;
+}
+
+input[type="checkbox"]:active {
+    background-color: #4a8028;
+    border-color: #3a6b1f;
+}
+
+input[type="checkbox"]:disabled {
+    background-color: #1a1a1a;
+    border-color: #4a4a4a;
+    opacity: 0.5;
+}
+
+input[type="checkbox"]:disabled:checked {
+    background-color: #1a1a1a;
+    border-color: #4a4a4a;
+    opacity: 0.7;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #2a2a2a;
+    border: 1px solid #4a4a4a;
+    border-radius: 9999px;
+
+    width: 13px;
+    height: 13px;
+    margin: 3px 3px 0px 5px;
+}
+
+input[type="radio"]:hover {
+    border-color: #4a8028;
+}
+
+input[type="radio"]:checked {
+    border-color: #4a8028;
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='512px' height='512px' viewBox='0 0 512 512'><circle cx='256' cy='256' r='164' style='fill: rgb(45, 80, 22);'/></svg>");
+}
+
+input[type="radio"]:checked:hover {
+    border-color: #4a8028;
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='512px' height='512px' viewBox='0 0 512 512'><circle cx='256' cy='256' r='164' style='fill: rgb(58, 107, 31);'/></svg>");
+}
+
+input[type="radio"]:active {
+    border-color: #3a6b1f;
+}
+
+input[type="radio"]:disabled {
+    background-color: #1a1a1a;
+    border-color: #4a4a4a;
+    opacity: 0.5;
+}
+
+input[type="radio"]:disabled:checked {
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='512px' height='512px' viewBox='0 0 512 512'><circle cx='256' cy='256' r='164' style='fill: rgb(74, 74, 74);'/></svg>");
+    border-color: #4a4a4a;
+    opacity: 0.7;
+}

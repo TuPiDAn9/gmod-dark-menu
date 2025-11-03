@@ -1,0 +1,351 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2a2a2a;
+
+    --button-bg: #2a2a2a;
+    --accent-border: #3a3a3a;
+    --accent-hover-dark: #2d5016;
+    --accent-hover-bright: #3a6b1f;
+    --border-scroll: #4a4a4a;
+    --accent-border-light: #4a8028;
+
+    --text-main: #e0e0e0;
+    --text-white: #fff;
+
+    --accent-error: #c43a00;
+    --warning-accent: #4a8028;
+}
+
+DIV.page DIV.options {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300px;
+    bottom: 0px;
+    padding-top: 50px;
+    padding-left: 50px;
+    background-color: transparent;
+}
+
+DIV.page DIV.innerpage {
+    position: absolute;
+    left: 320px;
+    top: 16px;
+    bottom: 16px;
+    right: 16px;
+    padding: 16px;
+    padding-top: 0;
+    background-color: transparent;
+}
+
+div.options h2 {
+    margin-top: 0px;
+    color: var(--text-main);
+}
+
+DIV.page DIV.options UL {
+    list-style-type: none;
+    padding: 2px 0px;
+    margin-left: 20px;
+}
+
+DIV.page DIV.options UL LI {
+    padding: 0px 16px;
+    margin-bottom: 1px;
+}
+
+DIV.page DIV.options,
+DIV.page DIV.options A {
+    font-size: 23px;
+    letter-spacing: -1.0px;
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: bold;
+    text-shadow: 2px 2px 1px var(--primary-bg);
+}
+
+DIV.page DIV.options .submenu A,
+DIV.page DIV.options .submenu LABEL {
+    font-size: 17px;
+    letter-spacing: 0px;
+    text-shadow: 1px 1px 1px var(--primary-bg);
+    color: var(--text-main);
+}
+
+DIV.page DIV.options UL.submenu LI {
+    padding: 0;
+    margin: 0;
+    margin-bottom: -4px;
+}
+
+DIV.page DIV.options A:hover {
+    color: var(--accent-hover-bright);
+}
+
+DIV.page DIV.options.active,
+DIV.page DIV.options A.active {
+    color: var(--warning-accent);
+}
+
+DIV.page DIV.options .search_bar {
+    padding: 2px 4px;
+    box-sizing: border-box;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    background-color: var(--accent-border);
+    border: 1px solid var(--accent-border-light);
+}
+
+div.ugc_content {
+    position: absolute;
+    left: 320px;
+    top: 16px;
+    bottom: 16px;
+    right: 16px;
+    padding: 16px;
+    padding-top: 0;
+    background-color: var(--secondary-bg);
+}
+
+/* Media queries */
+@media screen and (max-height: 768px) {
+    DIV.page DIV.options UL.submenu LI {
+        margin-bottom: -8px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    div.ugc_content {
+        left: 200px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    DIV.page DIV.options {
+        width: 250px;
+        font-size: 70%;
+    }
+
+    DIV.page DIV.innerpage {
+        left: 250px;
+        background-color: var(--secondary-bg);
+    }
+
+    DIV.page DIV.options,
+    DIV.page DIV.options A {
+        font-size: 16px;
+    }
+
+    DIV.page DIV.options UL.submenu LI {
+        margin-bottom: -4px;
+    }
+}
+
+@media screen and (max-height: 580px) {
+    DIV.page DIV.options {
+        padding-top: 0px;
+        background-color: var(--primary-bg);
+    }
+
+    DIV.page DIV.options UL {
+        padding: 0px;
+    }
+
+    DIV.page DIV.options UL LI {
+        margin-bottom: 0px;
+    }
+
+    DIV.page DIV.options,
+    DIV.page DIV.options A {
+        font-size: 20px;
+        line-height: 19px;
+    }
+}
+
+@media screen and (max-height: 420px) {
+    DIV.page DIV.options UL {
+        margin: 0px;
+    }
+
+    DIV.page DIV.options UL li img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    DIV.page DIV.options {
+        padding-top: 0px;
+        padding-left: 0px;
+        background-color: var(--primary-bg);
+    }
+}
+
+div.modaldialog {
+    background: rgba(26, 26, 26, 0.5);
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+div.centermessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: var(--secondary-bg);
+    border-radius: 5px;
+    border: 1px solid var(--accent-border-light);
+    padding: 20px;
+    max-width: 500px;
+    text-align: center;
+}
+
+div.centermessage.left {
+    text-align: left;
+}
+
+div.centermessage span {
+    color: var(--text-main);
+    display: block;
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: default;
+}
+
+div.centermessage label {
+    position: relative;
+    top: -2px;
+    cursor: default;
+    color: var(--text-main);
+}
+
+div.centermessage a {
+    display: block;
+    color: var(--text-white);
+    font-size: 16px;
+    border-radius: 4px;
+    background: var(--accent-border);
+    padding: 5px 10px;
+    text-align: center;
+    cursor: default;
+    border: 1px solid var(--border-scroll);
+}
+
+div.centermessage a:hover {
+    background: var(--border-scroll);
+}
+
+div.centermessage a.big {
+    padding: 10px 20px;
+    font-size: 32px;
+}
+
+div.centermessage a:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+div.centermessage a.warning {
+    background: var(--accent-error);
+    color: var(--text-white);
+    font-weight: bold;
+}
+
+div.centermessage a.warning:hover {
+    background: #ff4500;
+    box-shadow: 0 0 10px rgba(196, 58, 0, 0.5);
+}
+
+div.centermessage a.create {
+    background: var(--accent-border-light);
+    color: var(--text-white);
+    font-weight: bold;
+}
+
+div.centermessage a.create:hover {
+    background: var(--accent-hover-bright);
+}
+
+div.centermessage a.create.disabled {
+    background: var(--border-scroll);
+    opacity: 0.6;
+}
+
+input.preset_name {
+    width: 100%;
+    padding: 3px 5px;
+    background-color: var(--accent-border);
+    color: var(--text-main);
+    border: 1px solid var(--accent-border-light);
+    border-radius: 3px;
+}
+
+div.centermessage .button {
+    display: block;
+    color: var(--text-white);
+    font-size: 16px;
+    border-radius: 4px;
+    background: var(--accent-border);
+    padding: 5px 10px;
+    border: 1px solid var(--border-scroll);
+}
+
+div.centermessage .button:hover {
+    background: var(--border-scroll);
+}
+
+div.centermessage div.button {
+    margin-bottom: 2px;
+    position: relative;
+    background: var(--accent-border);
+}
+
+div.centermessage .wstitle {
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+    cursor: default;
+    overflow: hidden;
+    color: var(--text-main);
+}
+
+div.centermessage .wssub {
+    width: 55px;
+    height: 28px;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+div.centermessage wsbut img {
+    position: relative;
+    top: 2px;
+    right: 2px;
+}
+
+div.centermessage wsbut {
+    background: var(--border-scroll);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+div.centermessage wsbut:hover {
+    background: var(--accent-border);
+}
+
+div.centermessage .subbed wsbut {
+    background: var(--accent-border-light);
+}
+
+div.centermessage .subbed {
+    background: var(--accent-hover-dark) !important;
+}
+
+div.centermessage .subbed:hover {
+    background: var(--accent-hover-bright) !important;
+}

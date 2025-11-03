@@ -1,0 +1,11 @@
+/img/*
+!/img/gmod_logo_brave.png
+/js/*
+!/js/menu/
+/js/menu/*
+!/js/menu/control.Menu.js
+!/js/menu/control.Servers.js
+/saves.html
+/dupes.html
+/template
+/*.png
