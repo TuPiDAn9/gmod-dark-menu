@@ -7,14 +7,12 @@ var ServerTypes = {};
 var FirstTime = true;
 var UpdateInterval = undefined;
 
-// ИНИЦИАЛИЗАЦИЯ ТИПА
 function EnsureServerType( type ) {
 	if ( !ServerTypes[type] ) {
 		ServerTypes[type] = { gamemodes: {}, list: [] };
 	}
 }
 
-// ПРЕДЗАГРУЗКА ИСТОРИИ ПРИ СТАРТЕ
 function PreloadHistoryAtBoot() {
 	EnsureServerType( 'history' );
 
@@ -24,14 +22,11 @@ function PreloadHistoryAtBoot() {
 		RequestNum['history']++;
 	}
 
-	// В тестовой среде подать фиктивные данные
 	if ( !IN_ENGINE ) TestUpdateServers( 'history', RequestNum['history'] );
 
-	// Запросить сервера истории у движка
 	lua.Run( "GetServers( %s, %s )", 'history', String( RequestNum['history'] ) );
 
-	// Обновить индикаторы процесса, если RootScope уже есть
-	RootScope = RootScope || gScope; // gScope определяется в MenuController
+	RootScope = RootScope || gScope;
 	if ( RootScope ) {
 		if ( !RootScope.Refreshing ) RootScope.Refreshing = {};
 		if ( !RootScope.ServerCount ) RootScope.ServerCount = {};
