@@ -92,6 +92,7 @@ UL.category LI.mapicon.selected {
     border-radius: 5px;
     padding: 10px;
     border: 1px solid var(--border-color);
+    z-index: 1001;
 }
 
 .maplist .controls {
@@ -112,6 +113,7 @@ gamesettings {
     border-radius: 5px;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
+    z-index: 1001;
 }
 
 gamesettings bottom {
