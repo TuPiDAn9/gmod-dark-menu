@@ -101,6 +101,7 @@ H1 small {
     left: 0px;
     right: 0px;
     background-color: var(--primary-bg);
+    z-index: 1001;
 }
 
 .serverlist {
@@ -113,6 +114,7 @@ H1 small {
     height: 100%;
     color: var(--text-primary);
     border: 1px solid var(--border-color);
+    z-index: 1001;
 }
 
 .serverlist.found_servers {
