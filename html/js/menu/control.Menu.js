@@ -1,4 +1,3 @@
-
 if (!IN_ENGINE)
 {
 	window.util = {
@@ -13,7 +12,7 @@ var MapIndex = {}
 setTimeout(function(){
 	console.log( "THANK YOU for using Dark Main Menu mod" );
 	console.log( "Visit https://github.com/TuPiDAn9/gmod-dark-menu for updates and support." );
-	console.log( "Made by TuPiDAn | v1.2" );
+	console.log( "Made by TuPiDAn | v1.3" );
 }, 5000);
 
 var subscriptions = new Subscriptions();
@@ -87,6 +86,7 @@ function MenuController( $scope, $rootScope )
 	// Map List
 	//
 	$rootScope.MapList = [];
+	$rootScope.MapListFav = {};
 	$rootScope.AddonMapList = [];
 	lua.Run( "UpdateMapList()" );
 
@@ -193,50 +193,6 @@ function MenuController( $scope, $rootScope )
 	util.MotionSensorAvailable( function( available ) {
 		$scope.kinect.available = available;
 	} );
-
-	$scope.RecentServers = [];
-
-	$scope.UpdateRecentServers = function()
-	{
-		if ( !ServerTypes || !ServerTypes['history'] || !ServerTypes['history'].gamemodes )
-		{
-			$scope.RecentServers = [];
-			return;
-		}
-
-		var allServers = [];
-
-		for ( var gmName in ServerTypes['history'].gamemodes )
-		{
-			var gamemode = ServerTypes['history'].gamemodes[ gmName ];
-			if ( gamemode.servers && gamemode.servers.length > 0 )
-			{
-				allServers = allServers.concat( gamemode.servers );
-			}
-		}
-
-		allServers.sort( function( a, b ) {
-			return ( b.lastplayed || 0 ) - ( a.lastplayed || 0 );
-		} );
-
-		$scope.RecentServers = allServers.slice( 0, 5 );
-		UpdateDigest( $scope, 50 );
-	};
-
-	$scope.JoinRecentServer = function( server )
-	{
-		if ( server.password )
-			lua.Run( "RunConsoleCommand( \"password\", %s )", server.password );
-
-		lua.Run( "JoinServer( %s )", server.address );
-	};
-
-	setTimeout( function() {
-		if ( typeof PreloadHistoryAtBoot === 'function' ) {
-			PreloadHistoryAtBoot();
-		}
-	}, 0 );
-
 }
 
 function SetInGame( bInGame )
@@ -254,13 +210,6 @@ function SetShowFavButton( bShow, bFav )
 
 function UpdateGamemodes( gm )
 {
-	if ( !gm || !Array.isArray( gm ) )
-	{
-		gScope.Gamemodes = [];
-		UpdateDigest( gScope, 50 );
-		return;
-	}
-
 	gScope.Gamemodes = [];
 	for ( k in gm )
 	{
@@ -305,7 +254,8 @@ function UpdateAddonMaps( inmaps )
 
 function UpdateMaps( inmaps )
 {
-	var mapList = []
+	var mapList = [];
+	var favList = {};
 
 	for ( k in inmaps )
 	{
@@ -318,6 +268,7 @@ function UpdateMaps( inmaps )
 		{
 			maps.push( inmaps[k][v] );
 			MapIndex[ inmaps[k][v].toLowerCase() ] = true;
+			if ( k == "Favourites" ) favList[ inmaps[k][v].toLowerCase() ] = true;
 		}
 
 		mapList.push(
@@ -329,6 +280,7 @@ function UpdateMaps( inmaps )
 	}
 
 	gScope.MapList = mapList;
+	gScope.MapListFav = favList;
 	UpdateDigest( gScope, 50 );
 }
 
@@ -339,22 +291,12 @@ function DoWeHaveMap( map )
 
 function UpdateLanguages( lang )
 {
-	if ( !lang || !Array.isArray( lang ) )
-	{
-		gScope.Languages = [];
-		UpdateDigest( gScope, 50 );
-		return;
-	}
-
 	gScope.Languages = [];
 
 	for ( k in lang )
 	{
-		// Strip .vdf extension if present
 		gScope.Languages.push( lang[k].substr( 0, lang[k].length - 4 ) )
 	}
-
-	UpdateDigest( gScope, 50 );
 }
 
 function UpdateLanguage( lang )
