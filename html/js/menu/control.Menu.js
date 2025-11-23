@@ -9,7 +9,7 @@ var gScope = null;
 var GamemodeDetails = {}
 var MapIndex = {}
 
-setTimeout(function(){
+	setTimeout(function(){
 	console.log( "THANK YOU for using Dark Main Menu mod" );
 	console.log( "Visit https://github.com/TuPiDAn9/gmod-dark-menu for updates and support." );
 	console.log( "Made by TuPiDAn | v1.3" );
@@ -193,6 +193,49 @@ function MenuController( $scope, $rootScope )
 	util.MotionSensorAvailable( function( available ) {
 		$scope.kinect.available = available;
 	} );
+
+	$scope.RecentServers = [];
+
+	$scope.UpdateRecentServers = function()
+	{
+		if ( !ServerTypes || !ServerTypes['history'] || !ServerTypes['history'].gamemodes )
+		{
+			$scope.RecentServers = [];
+			return;
+		}
+
+		var allServers = [];
+
+		for ( var gmName in ServerTypes['history'].gamemodes )
+		{
+			var gamemode = ServerTypes['history'].gamemodes[ gmName ];
+			if ( gamemode.servers && gamemode.servers.length > 0 )
+			{
+				allServers = allServers.concat( gamemode.servers );
+			}
+		}
+
+		allServers.sort( function( a, b ) {
+			return ( b.lastplayed || 0 ) - ( a.lastplayed || 0 );
+		} );
+
+		$scope.RecentServers = allServers.slice( 0, 5 );
+		UpdateDigest( $scope, 50 );
+	};
+
+	$scope.JoinRecentServer = function( server )
+	{
+		if ( server.password )
+			lua.Run( "RunConsoleCommand( \"password\", %s )", server.password );
+
+		lua.Run( "JoinServer( %s )", server.address );
+	};
+
+	setTimeout( function() {
+		if ( typeof PreloadHistoryAtBoot === 'function' ) {
+			PreloadHistoryAtBoot();
+		}
+	}, 0 );
 }
 
 function SetInGame( bInGame )
