@@ -12,7 +12,7 @@ var MapIndex = {}
 	setTimeout(function(){
 	console.log( "THANK YOU for using Dark Main Menu mod" );
 	console.log( "Visit https://github.com/TuPiDAn9/gmod-dark-menu for updates and support." );
-	console.log( "Made by TuPiDAn | v1.3" );
+	console.log( "Made by TuPiDAn | v1.3.3" );
 }, 5000);
 
 var subscriptions = new Subscriptions();
