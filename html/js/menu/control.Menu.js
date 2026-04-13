@@ -9,11 +9,7 @@ var gScope = null;
 var GamemodeDetails = {}
 var MapIndex = {}
 
-	setTimeout(function(){
-	console.log( "THANK YOU for using Dark Main Menu mod" );
-	console.log( "Visit https://github.com/TuPiDAn9/gmod-dark-menu for updates and support." );
-	console.log( "Made by TuPiDAn | v1.3.5" );
-}, 5000);
+	console.log( "\nTHANK YOU for using Dark Main Menu mod\nVisit https://github.com/TuPiDAn9/gmod-dark-menu for updates and support.\nMade by TuPiDAn | v1.3.5" );
 
 var subscriptions = new Subscriptions();
 
