@@ -247,7 +247,6 @@ function ControllerServers( $scope, $element, $rootScope, $location )
 		}
 
 		RootScope.ServerType		= type;
-		RootScope.Gamemodes			= ServerTypes[type].gamemodes;
 		RootScope.GamemodeList		= ServerTypes[type].list;
 		RootScope.CurrentGamemode	= null;
 

@@ -29,6 +29,7 @@ function MenuController( $scope, $rootScope )
 	gScope = $scope;
 
 	gScope.Gamemode = '';
+	gScope.Gamemodes = [];
 
 	$scope.ToggleGamemodes = function()
 	{
