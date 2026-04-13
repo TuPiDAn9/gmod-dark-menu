@@ -192,12 +192,14 @@ function MenuController( $scope, $rootScope )
 	} );
 
 	$scope.RecentServers = [];
+	$scope.RecentServersLoading = true;
 
 	$scope.UpdateRecentServers = function()
 	{
 		if ( !ServerTypes || !ServerTypes['history'] || !ServerTypes['history'].gamemodes )
 		{
 			$scope.RecentServers = [];
+			$scope.RecentServersLoading = true;
 			return;
 		}
 
@@ -217,6 +219,7 @@ function MenuController( $scope, $rootScope )
 		} );
 
 		$scope.RecentServers = allServers.slice( 0, 5 );
+		$scope.RecentServersLoading = false;
 		UpdateDigest( $scope, 50 );
 	};
 

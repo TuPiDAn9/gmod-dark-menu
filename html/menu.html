@@ -50,8 +50,10 @@
 		<a href="#/" class="button ui_sound_return" ng-show="ShowBack" id="BackToMenu"><img src='img/back_to_main_menu.png' loading="lazy"><span ng-Tranny="'back_to_main_menu'" ></span></a>
 	</div>
 
-	<div id="RecentServers" ng-show="RecentServers.length > 0">
+	<div id="RecentServers" ng-show="RecentServersLoading || RecentServers.length > 0">
+		<div class="header" ng-show="RecentServersLoading">Loading...</div>
 		<div class="server-item"
+		     ng-show="!RecentServersLoading"
 		     ng-repeat="server in RecentServers | limitTo: 3"
 		     ng-click="JoinRecentServer(server)"
 		     ng-attr-title="{{server.name}}">
