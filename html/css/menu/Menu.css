@@ -76,6 +76,10 @@ A {
     transition: color .15s;
 }
 
+A:not(:disabled) {
+    cursor: pointer;
+}
+
 A:hover {
     color: var(--hover-bg);
 }

@@ -389,7 +389,7 @@ function ControllerServers( $scope, $element, $rootScope, $location )
 	}
 }
 
-function FinishedServeres( type )
+function FinishedServers( type )
 {
 	RootScope.Refreshing[type] = "false";
 	if ( type === 'history' && typeof gScope !== 'undefined' && gScope && gScope.UpdateRecentServers ) {
